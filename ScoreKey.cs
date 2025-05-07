@@ -1,8 +1,10 @@
 ﻿using System;
 
-public class ScoreKey
+namespace mahjongOBSAddOns
 {
-	public Class1()
+	public class ScoreKey
 	{
+	
 	}
 }
+

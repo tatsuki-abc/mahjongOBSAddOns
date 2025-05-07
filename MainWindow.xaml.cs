@@ -24,5 +24,23 @@ namespace mahjongOBSAddOns
         {
             InitializeComponent();
         }
+
+        private void OnCalculateClick(object sender, RoutedEventArgs e)
+        {
+            if (hanComboBox.SelectedItem is ComboBoxItem hanItem && fuComboBox.SelectedItem is ComboBoxItem fuItem)
+            {
+                int han = int.Parse(hanItem.Content.ToString());
+                int fu = int.Parse(fuItem.Content.ToString());
+                bool isParent = ParentRadio.IsChecked == true;
+                bool isTsumo = TsumoRadio.IsChecked == true;
+
+                string? result = ScoreCalculator.Calculate(han, fu, isParent, isTsumo);
+                ResultText.Text = result ?? "無効な入力です。";
+            }
+            else
+            {
+                ResultText.Text = "翻数と符数を選択してください。";
+            }
+        }
     }
 }
