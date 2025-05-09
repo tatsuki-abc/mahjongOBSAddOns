@@ -9,11 +9,37 @@
     <Grid Margin="10">
         <StackPanel>
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
-                <RadioButton x:Name="three" Content="三麻" GroupName="PlayerType" Margin="0,0,10,0"/>
-                <RadioButton x:Name="four" Content="四麻" GroupName="PlayerType" IsChecked="True" />
+            <StackPanel Margin="10">
+
+                <!-- 麻雀人数選択 -->
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="人数：" Width="80"/>
+                    <ComboBox x:Name="PlayerCountComboBox" Width="100">
+                        <ComboBoxItem Content="4人麻雀" />
+                        <ComboBoxItem Content="3人麻雀" />
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- 和了者/放銃者の選択 -->
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="和了者：" Width="80"/>
+                    <ComboBox x:Name="WinnerComboBox" Width="100"/>
+                    <TextBlock Text="放銃者：" Width="80"/>
+                    <ComboBox x:Name="LoserComboBox" Width="100"/>
+                </StackPanel>
+
+                <!-- ツモ or ロン -->
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="和了方法：" Width="80"/>
+                    <ComboBox x:Name="WinTypeComboBox" Width="100">
+                        <ComboBoxItem Content="ツモ"/>
+                        <ComboBoxItem Content="ロン"/>
+                    </ComboBox>
+                </StackPanel>
+
             </StackPanel>
 
+            <!-- 翻数 -->
             <TextBlock Text="翻数:" VerticalAlignment="Center" Width="40"/>
             <ComboBox x:Name="hanComboBox" Width="100">
                 <ComboBoxItem Content="1"/>
@@ -35,7 +61,8 @@
                 <ComboBoxItem Content="65"/>
                 <ComboBoxItem Content="78"/>
             </ComboBox>
-            
+
+            <!-- 符数 -->
             <TextBlock Text="符数:" Margin="10,0,0,0" VerticalAlignment="Center" Width="40"/>
             <ComboBox x:Name="fuComboBox" Width="100">
                 <ComboBoxItem Content="20"/>

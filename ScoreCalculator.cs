@@ -27,7 +27,7 @@ namespace mahjongOBSAddOns
             }
             else if (isParent && isTsumo)
             {
-                if (MahjongScoreTable.ParentTsumoPoint.TryGetValue((han, fu), out int score))
+                if (MahjongScoreTable.ParentTsumoPoints.TryGetValue((han, fu), out int score))
                 {
                     int total = score + honba * 100 + kyoutaku * 1000;
                     if (han >= 13)
