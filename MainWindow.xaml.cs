@@ -27,14 +27,16 @@ namespace mahjongOBSAddOns
 
         private void OnCalculateClick(object sender, RoutedEventArgs e)
         {
-            if (hanComboBox.SelectedItem is ComboBoxItem hanItem && fuComboBox.SelectedItem is ComboBoxItem fuItem)
+            if (hanComboBox.SelectedItem is ComboBoxItem hanItem && fuComboBox.SelectedItem is ComboBoxItem fuItem && honbaComboBox.SelectedItem is ComboBoxItem honbaItem && kyoutakuComboBox.SelectedItem is ComboBoxItem kyoutakuItem)
             {
                 int han = int.Parse(hanItem.Content.ToString());
                 int fu = int.Parse(fuItem.Content.ToString());
+                int honba = int.Parse(honbaItem.Content.ToString());
+                int kyoutaku = int.Parse(kyoutakuItem.Content.ToString());
                 bool isParent = ParentRadio.IsChecked == true;
                 bool isTsumo = TsumoRadio.IsChecked == true;
 
-                string? result = ScoreCalculator.Calculate(han, fu, isParent, isTsumo);
+                string? result = ScoreCalculator.Calculate(han, fu, isParent, isTsumo, honba, kyoutaku);
                 ResultText.Text = result ?? "無効な入力です。";
             }
             else
