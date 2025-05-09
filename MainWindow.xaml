@@ -8,6 +8,12 @@
         Title="麻雀点数計算" Height="450" Width="800">
     <Grid Margin="10">
         <StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+                <RadioButton x:Name="three" Content="三麻" GroupName="PlayerType" Margin="0,0,10,0"/>
+                <RadioButton x:Name="four" Content="四麻" GroupName="PlayerType" IsChecked="True" />
+            </StackPanel>
+
             <TextBlock Text="翻数:" VerticalAlignment="Center" Width="40"/>
             <ComboBox x:Name="hanComboBox" Width="100">
                 <ComboBoxItem Content="1"/>

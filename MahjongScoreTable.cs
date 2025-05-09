@@ -5,7 +5,7 @@ namespace mahjongOBSAddOns
 {
 	public static class MahjongScoreTable
 	{
-		public static readonly Dictionary<(int han, int fu), int> ParentTsumoPoint = new()
+		public static readonly Dictionary<(int han, int fu), int> ParentTsumoPoints = new()
 		{
             {(1, 30), 500 }, 
 			{(1, 40), 700 }, 
